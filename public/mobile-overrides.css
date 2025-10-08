@@ -1,0 +1,294 @@
+/* =====================================================
+   Mobile Overrides Skeleton
+   Purpose: Safe sandbox for experimenting with mobile layouts
+   Load order: After styles.css so these rules can override selectively.
+   Strategy: Provide structured empty blocks for common device widths.
+   Remove or merge into main stylesheet once stabilized.
+   ===================================================== */
+
+/* Design Tokens (override candidates) */
+:root {
+  /* Mobile experiment tokens (use inside narrow breakpoints) */
+  --m-font-base: 15px;           /* Base font size for very small screens */
+  --m-side-pad: 18px;            /* Horizontal padding to test */
+  --m-panel-pad-y: 44px;         /* Vertical panel padding */
+  --m-panel-pad-x: 22px;         /* Horizontal panel padding */
+  --m-hero-top: 70px;            /* Hero top padding */
+  --m-hero-bottom: 80px;
+  --m-gap-section: 56px;         /* Spacing between panels */
+  --m-heading-scale: 0.92;       /* Multiplier for h2/h3 if needed */
+}
+
+/* =====================================================
+   Breakpoint Reference:
+   <= 900px : Already used (navigation & hero tweaks)
+   <= 680px : Existing adjustments
+   <= 640px : Brand layout adjustments
+
+   New fine-grained tiers for experimentation:
+   <= 560px (phablet to small phones)
+   <= 480px (baseline small phones)
+   <= 430px (narrow modern iPhones / Pixel)
+   <= 400px (older Android / SE landscape constraints)
+   <= 375px (iPhone reference width)
+   <= 360px (very small Android)
+   <= 340px (edge safety zone) – keep minimal changes
+   ===================================================== */
+
+/* ========== <= 560px Sandbox ========== */
+@media (max-width:560px){
+  /* Place experimental rules here. Keep them commented initially. */
+  /* Example:
+  main { max-width: 100%; }
+  */
+}
+
+/* Logo under text (phones) */
+@media (max-width:560px){
+  .topbar { justify-content:center; gap:16px; }
+  .brand { flex-direction:column-reverse; align-items:center; gap:10px; margin:0 auto; }
+  .brand__logo { width:78px; }
+  .brand__name { margin:0; display:flex; flex-direction:column; align-items:center; text-align:center; gap:2px; }
+  .brand__primary { display:block; }
+  .brand__role { display:block; margin-left:0; margin-top:2px; }
+  .brand__primary { font-size:30px !important; line-height:1.05; }
+}
+
+/* =========================
+   Services media half-height (phones <=767px)
+   Objectif: réduire la hauteur perçue des visuels de moitié sans casser la grille desktop.
+   Méthode: passer l'aspect-ratio de 4/3 à 4/6 (soit 2:3) et ajuster la base inline.
+   ========================= */
+@media (max-width:767px){
+  /* Objectif: passer de ~302x453 à ~302x125 (≈40% hauteur originale) */
+  #services .diag-media-wrap {
+    aspect-ratio:auto !important; /* neutralise ratio précédent */
+    height:125px; /* hauteur fixe demandée */
+    min-width:240px; /* laisser flex ajuster; 302px sera atteint si place */
+    max-width:100%;
+    display:flex;
+  }
+  #services .diag-media-wrap img { object-fit:cover; width:100%; height:100%; }
+  /* Variante inline: ajuster base pour permettre ~302px quand possible */
+  /* Retrait du flex-basis fixe: il forçait une hauteur car en colonne le basis devient dimension principale */
+  #services .diag-step.inline .diag-media-wrap { flex:none; width:100%; }
+  /* Esthétique : conserver radius + ombre plus légère */
+  #services .diag-media-wrap { border-radius:14px; box-shadow:0 4px 14px -8px rgba(10,35,60,.3),0 2px 4px -2px rgba(0,0,0,.08); }
+}
+
+/* Override de secours: si la hauteur reste à ~302px, cette règle plus spécifique (et !important) forcera 125px */
+@media (max-width:767px){
+  #services .diag-step.inline .diag-media-wrap,
+  #services .diag-step.side-left .diag-media-wrap,
+  #services .diag-step.side-right .diag-media-wrap {
+    height:125px !important; /* Force absolue mobile */
+    min-height:125px !important;
+    max-height:125px !important;
+    aspect-ratio:auto !important;
+  }
+  /* Debug option: enlever le commentaire pour visualiser la zone
+  #services .diag-media-wrap { outline:2px solid magenta; }
+  */
+}
+@media (max-width:560px){
+  /* Refined: Name (line1), AVOCAT (line2), Logo (line3) */
+  .brand__role { align-self:center; font-size:18px; letter-spacing:1.4px; }
+  .brand__logo { margin-top:0; }
+  header.site-hero { text-align:center; }
+}
+
+/* Single language switch (phones only) */
+@media (max-width:767px){
+  #langSwitcher { position:fixed; top:10px; right:12px; z-index:9999; font-size:.74rem; font-weight:600; letter-spacing:1.3px; cursor:pointer; color:#fff; background:transparent; padding:6px 6px; user-select:none; transition:opacity .28s ease, transform .32s cubic-bezier(.22,.8,.32,1); will-change:opacity,transform; }
+  #langSwitcher:active { opacity:.6; }
+  #langSwitcher.lang-hidden { opacity:0; pointer-events:none; transform:translateY(-6px); }
+  .lang-switch-rooted#langSwitcher { pointer-events:auto; }
+  .panel { z-index:10; position:relative; }
+  header.site-hero { z-index:5; position:relative; }
+}
+
+/* =============================================
+   Phone Navigation Removal (exclude tablets)
+   Hides main nav links on viewports narrower than 768px.
+   Tablets (>=768px) keep desktop nav.
+   ============================================= */
+@media (max-width:767px){
+  nav.primary { display:none !important; }
+}
+
+/* ========== <= 480px Core Mobile Tier ========== */
+  /* When relocated to body root */
+  .lang-switch-rooted#langSwitcher { pointer-events:auto; }
+  /* Lower panel stacking slightly to guarantee switch visibility */
+  .panel { z-index:10; position:relative; }
+  header.site-hero { z-index:5; position:relative; }
+@media (max-width:480px){
+  /* Typography base experiment */
+  /* html { font-size: var(--m-font-base); } */
+  /* Reduce panel padding */
+  /* .panel { padding: var(--m-panel-pad-y) var(--m-panel-pad-x); } */
+  /* Make hero tighter */
+  /* header.site-hero { padding: var(--m-hero-top) var(--side-pad) var(--m-hero-bottom); } */
+  /* Full-width buttons */
+  /* .hero-ctas .btn, #contact-form .btn { width:100%; } */
+}
+
+/* Masquer le bouton "Voir les services" sur mobile */
+@media (max-width:767px){
+  .btn-view-services { display:none !important; }
+  /* Optionnel: si un espace vide se crée, on peut réduire la marge sous le lead */
+  .hero-lead { margin-bottom:50px; }
+}
+
+/* =========================
+   Spécifique: réduire uniquement Steps 1 et 3 (Mise en place & Contrats) à 25px sur mobile
+   ========================= */
+@media (max-width:767px){
+  #services .diag-step[data-step="1"] .diag-media-wrap,
+  #services .diag-step[data-step="3"] .diag-media-wrap {
+    height:25px !important;
+    min-height:25px !important;
+    max-height:25px !important;
+    overflow:hidden;
+  }
+  /* Ajuster le badge pour ne pas dépasser visuellement */
+  #services .diag-step[data-step="1"] .diag-badge,
+  #services .diag-step[data-step="3"] .diag-badge {
+    width:32px; height:32px; font-size:.75rem; top:4px; left:6px; box-shadow:0 4px 10px -4px rgba(15,40,60,.4);
+  }
+  /* Option: masquer totalement l'image si 25px trop mince pour valeur sémantique */
+  /* #services .diag-step[data-step="1"] .diag-media-wrap img,
+     #services .diag-step[data-step="3"] .diag-media-wrap img { display:none; } */
+}
+
+/* ========== <= 430px Narrow Tier ========== */
+@media (max-width:430px){
+  /* Optional heading scale */
+  /* h2.section-title { font-size: calc(clamp(1.55rem,2.5vw,2.2rem) * var(--m-heading-scale)); } */
+  /* Journey content tightening */
+  /* .diag-step.inline .diag-content { padding:24px 22px 26px; } */
+}
+
+/* ========== <= 400px Compress Tier ========== */
+@media (max-width:400px){
+  /* Reduce gaps */
+  /* .panel + .panel { margin-top: calc(var(--m-gap-section) - 10px); } */
+  /* .diag-steps { gap:60px; } */
+}
+
+/* ========== <= 375px Classic iPhone Width ========== */
+@media (max-width:375px){
+  #langSwitcher { position:fixed; top:10px; right:12px; z-index:9999; font-size:.78rem; font-weight:600; letter-spacing:1.4px; cursor:pointer; color:#fff; background:transparent; padding:6px 4px; user-select:none; transition:opacity .28s ease; }
+  /* .hero-lead { font-size:1rem; } */
+  #langSwitcher.lang-hidden { opacity:0; pointer-events:none; }
+
+  /* ========== <= 360px Very Small Phones ========== */
+  @media (max-width:360px){
+    #langSwitcher { position:fixed; top:10px; right:12px; z-index:9999; font-size:.78rem; font-weight:600; letter-spacing:1.4px; cursor:pointer; color:#fff; background:transparent; padding:6px 4px; user-select:none; transition:opacity .28s ease, transform .32s cubic-bezier(.22,.8,.32,1); }
+    /* Hidden state (fade + slight rise) */
+
+    /* Mobile: réduire l'espace entre le lead de phase et le premier contenu (remonter la timeline) */
+    @media (max-width:560px){
+      /* Retire ~120px uniquement pour écrans plus larges que 380px (évite problèmes iPhone SE) */
+      @media (min-width:381px){
+        #services .diag-steps { margin-top:-120px; }
+      }
+      /* Gap réduit conservé pour tous */
+      #services .diag-phase { gap:28px; }
+    }
+    #langSwitcher.lang-hidden { opacity:0; pointer-events:none; transform:translateY(-6px); }
+  }
+}
+
+/* ========== <= 340px Safety Edge ========== */
+@media (max-width:340px){
+  /* Avoid layout breakage: minimal adjustments only */
+  /* h1.hero-title { font-size:2.2rem; } */
+  /* .panel { padding:38px 18px 42px; } */
+}
+
+/* =====================================================
+   Variant Classes (apply to <body>): m-compact / m-standard / m-relaxed
+   ===================================================== */
+body.m-compact {
+  /* Variant: compact spacing */
+  /* Uncomment to activate */
+  /* .panel { padding-top:38px; padding-bottom:42px; } */
+  /* h1.hero-title { margin-bottom:28px; } */
+  --_m-variant: compact; /* placeholder to avoid empty rule */
+}
+body.m-relaxed {
+  /* Variant: relaxed spacing */
+  /* .panel { padding-top:58px; padding-bottom:64px; } */
+  --_m-variant: relaxed; /* placeholder */
+}
+
+/* =====================================================
+   Emulation helpers (wrap content inside a div for visual testing)
+   Usage (DEV ONLY):
+   <div class="emulate emulate-375"> ... site ... </div>
+   Remove before production.
+   ===================================================== */
+.emulate { margin:0 auto; border:1px solid #ccc; box-shadow:0 0 0 4px #1112; background:#fff; }
+.emulate-375 { width:375px; }
+.emulate-390 { width:390px; }
+.emulate-414 { width:414px; }
+.emulate-430 { width:430px; }
+.emulate-360 { width:360px; }
+.emulate-320 { width:320px; }
+
+/* Optional: ensure body background visible around frame */
+/* body { background:#1b2933; } */
+
+/* =============================================
+   Téléphones en mode paysage (mêmes règles que portrait)
+   Conditions: largeur <= 767px ET orientation landscape
+   ============================================= */
+@media (max-width:767px) and (orientation:landscape){
+  /* Brand empilé: Nom -> Avocat -> Logo */
+  .topbar { justify-content:center; }
+  .brand { flex-direction:column-reverse; align-items:center; gap:10px; margin:0 auto; }
+  .brand__name { display:flex; flex-direction:column; align-items:center; text-align:center; gap:2px; }
+  .brand__role { margin:2px 0 0; align-self:center; }
+  .brand__logo { width:78px; }
+  /* Bouton services déjà masqué en portrait: sécurité paysage */
+  .btn-view-services { display:none !important; }
+  /* Nav déjà masquée via règle (max-width:767px), pas besoin de répéter. */
+  /* Hauteur médias: reprise (si portrait appliqué avant, rien à faire; ceci agit comme assurance) */
+  #services .diag-step.inline .diag-media-wrap,
+  #services .diag-step.side-left .diag-media-wrap,
+  #services .diag-step.side-right .diag-media-wrap { height:125px !important; min-height:125px !important; max-height:125px !important; aspect-ratio:auto !important; }
+  /* Steps 1 & 3 réduits à 25px */
+  #services .diag-step[data-step="1"] .diag-media-wrap,
+  #services .diag-step[data-step="3"] .diag-media-wrap { height:25px !important; min-height:25px !important; max-height:25px !important; overflow:hidden; }
+  #services .diag-step[data-step="1"] .diag-badge,
+  #services .diag-step[data-step="3"] .diag-badge { width:32px; height:32px; font-size:.75rem; top:4px; left:6px; }
+}
+
+/* =====================================================
+   Paysage smartphones larges (ex: iPhone 12/13/14/15 landscape ~844px width)
+   Lorsque la largeur dépasse 767px mais la hauteur est faible, les règles précédentes ne s'appliquent pas.
+   On cible donc: écran tactile, orientation paysage, faible hauteur.
+   ===================================================== */
+@media (orientation:landscape) and (pointer:coarse) and (max-height:520px){
+  /* Empêcher application sur tablettes (hauteur landscape iPad = 768px > 520) */
+  /* Brand stacking */
+  .topbar { justify-content:center; }
+  .brand { flex-direction:column-reverse; align-items:center; gap:10px; margin:0 auto; }
+  .brand__name { display:flex; flex-direction:column; align-items:center; text-align:center; gap:2px; }
+  .brand__role { margin:2px 0 0; align-self:center; }
+  .brand__logo { width:78px; }
+  /* Masquer nav (largeur > 767 donc pas couverte par précédente règle) */
+  nav.primary { display:none !important; }
+  /* Masquer le bouton voir services */
+  .btn-view-services { display:none !important; }
+  /* Hauteur médias par défaut */
+  #services .diag-step.inline .diag-media-wrap,
+  #services .diag-step.side-left .diag-media-wrap,
+  #services .diag-step.side-right .diag-media-wrap { height:125px !important; min-height:125px !important; max-height:125px !important; aspect-ratio:auto !important; }
+  /* Steps 1 & 3 spécifiques */
+  #services .diag-step[data-step="1"] .diag-media-wrap,
+  #services .diag-step[data-step="3"] .diag-media-wrap { height:25px !important; min-height:25px !important; max-height:25px !important; overflow:hidden; }
+  #services .diag-step[data-step="1"] .diag-badge,
+  #services .diag-step[data-step="3"] .diag-badge { width:32px; height:32px; font-size:.75rem; top:4px; left:6px; }
+}

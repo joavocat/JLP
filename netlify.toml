@@ -1,0 +1,13 @@
+[build]
+  publish = "public"
+  # Static site: no build command needed
+  command = ""
+
+[context.production]
+  environment = { NODE_VERSION = "18" }
+
+# Redirect root index explicitly (optional safety)
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 200

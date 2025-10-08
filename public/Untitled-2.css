@@ -1,0 +1,302 @@
+/* Variables de couleur et styles généraux */
+:root {
+    --bleu-pale: #eaf4ff; /* Un bleu très clair pour les fonds */
+    --bleu-moyen: #3a7ca5; /* Un bleu plus soutenu pour les accents */
+    --gris-fonce: #333333; /* Pour le texte principal */
+    --gris-clair: #f4f4f4; /* Pour les fonds de section alternés */
+    --blanc: #ffffff;
+    --ombre: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--gris-fonce);
+    margin: 0;
+    padding-top: 70px; /* Espace pour la barre de navigation fixe */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+/* Barre de Navigation */
+.navbar {
+    background-color: var(--blanc);
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--ombre);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--gris-fonce);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.nav-menu a {
+    color: var(--gris-fonce);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--bleu-moyen);
+}
+
+/* Section Hero (Accueil) */
+.hero {
+    background: url('https://images.unsplash.com/photo-1549643648-f689b7433842?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: var(--blanc);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.6); /* Superposition foncée */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--bleu-moyen);
+    color: var(--blanc);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #2c5d82;
+}
+
+/* Sections Générales */
+section {
+    padding: 5rem 0;
+}
+
+/* Section À Propos */
+.about-section {
+    background-color: var(--blanc);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--ombre);
+}
+
+/* Section Services */
+.services-section {
+    background-color: var(--gris-clair);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--blanc);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--ombre);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: var(--bleu-moyen);
+    margin-top: 0;
+    border-bottom: 2px solid var(--bleu-pale);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-card li:last-child {
+    border-bottom: none;
+}
+
+/* Section Contact */
+.contact-section {
+    background-color: var(--bleu-pale);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    background: var(--blanc);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--ombre);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.radio-group input {
+    width: auto;
+}
+.radio-group label {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--gris-fonce);
+    color: var(--blanc);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    h2 { font-size: 2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+
+    .navbar .container { height: 60px; }
+    .nav-menu { display: none; } /* Pour simplifier, on cache le menu sur mobile. On pourrait ajouter un menu hamburger avec du JavaScript plus tard. */
+    .nav-logo { font-size: 1rem; }
+    
+    .about-container {
+        flex-direction: column;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

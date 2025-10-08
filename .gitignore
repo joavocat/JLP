@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Python local server artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (if later added)
+.venv/
+venv/
+env/
+
+# Node/tooling placeholders (in case of future tooling)
+node_modules/
+dist/
+build/
+.parcel-cache/
+.cache/
+
+# Logs & temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+*.tmp
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# Netlify / Deploy output (site itself lives in public/ so keep that)
+netlify.toml.backup
+
+# Misc
+*.bak
+*.orig
+*.rej
+
+# Generated archives
+*.zip
+*.tar
+*.tar.gz

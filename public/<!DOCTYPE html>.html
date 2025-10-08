@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Lauzon Potts - Avocat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#accueil" class="nav-logo">
+                <img src="JLP black logo.png" alt="Logo JLP Avocat" class="logo">
+                Joseph Lauzon Potts, Avocat
+            </a>
+            <nav class="nav-menu">
+                <a href="#a-propos">À Propos</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Prendre Rendez-Vous</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Conseils juridiques stratégiques pour entrepreneurs et startups</h1>
+                <p>Une approche moderne et accessible pour protéger et faire grandir votre entreprise.</p>
+                <a href="#contact" class="cta-button">Planifier une consultation</a>
+            </div>
+        </section>
+
+        <section id="a-propos" class="about-section">
+            <div class="container about-container">
+                <div class="about-text">
+                    <h2>Maître Joseph Lauzon Potts</h2>
+                    <p>Diplômé de la Faculté de droit de l'Université de Montréal (LL.B.) et membre du Barreau du Québec depuis 2025, je me consacre à offrir des services juridiques adaptés à la réalité des fondateurs d'entreprises et des PME. Mon objectif est de devenir un partenaire de confiance dans votre croissance en vous fournissant des outils juridiques clairs et efficaces.</p>
+                    <p>Contrairement aux grands cabinets, mon approche est personnelle et directe. Nous travaillons ensemble, sans intermédiaire, pour bâtir des fondations solides pour votre projet d'affaires.</p>
+                </div>
+                <div class="about-image">
+                    <img src="placeholder-photo.jpg" alt="Photo de Joseph Lauzon Potts">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2>Mes Services</h2>
+                <p class="section-subtitle">Un accompagnement juridique à chaque étape clé de votre entreprise.</p>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>1. Le Démarrage de l'Entreprise (La Fondation)</h3>
+                        <ul>
+                            <li>Incorporation et structuration (provinciale/fédérale)</li>
+                            <li>Immatriculation au Registraire des entreprises du Québec (REQ)</li>
+                            <li>Organisation juridique initiale et livre des procès-verbaux</li>
+                            <li>Rédaction du pacte d'actionnaires</li>
+                            <li>Rédaction de règlements intérieurs pour la société</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3>2. Les Opérations Quotidiennes (Le Commercial)</h3>
+                        <ul>
+                            <li>Rédaction et révision de contrats commerciaux (clients, fournisseurs)</li>
+                            <li>Ententes de confidentialité (NDA)</li>
+                            <li>Termes et conditions et politique de confidentialité (Loi 25)</li>
+                            <li>Rédaction de contrats de travail et pour travailleurs autonomes</li>
+                            <li>Révision de baux commerciaux</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3>3. La Croissance et le Financement</h3>
+                        <ul>
+                            <li>Tenue et mise à jour annuelle du livre de minutes</li>
+                            <li>Conseils sur le financement d'amorçage ("love money")</li>
+                            <li>Rédaction de billets convertibles et ententes de souscription</li>
+                            <li>Mise en place d'un régime d'options d'achat d'actions (SOP)</li>
+                        </ul>
+                    </article>
+                    <article class="service-card">
+                        <h3>4. La Gestion des Litiges de Base</h3>
+                        <ul>
+                            <li>Rédaction et envoi de lettres de mise en demeure</li>
+                            <li>Assistance et rédaction de documents pour la Cour des petites créances</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Planifier une consultation</h2>
+                <p class="section-subtitle">Remplissez ce formulaire pour débuter la conversation. Je vous contacterai dans les plus brefs délais.</p>
+                <form action="VOTRE_ENDPOINT_FORMSPREE" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Courriel</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-type">Type de service requis</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">-- Veuillez choisir une option --</option>
+                            <option value="Demarrage">Démarrage de l'Entreprise</option>
+                            <option value="Operations">Opérations Quotidiennes</option>
+                            <option value="Croissance">Croissance et Financement</option>
+                            <option value="Litiges">Gestion des Litiges de Base</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Niveau d'urgence</label>
+                        <div class="radio-group">
+                            <input type="radio" id="urgent" name="urgence" value="Urgent (24-48h)">
+                            <label for="urgent">Urgent (24-48h)</label>
+                            <input type="radio" id="standard" name="urgence" value="Standard (1-2 semaines)" checked>
+                            <label for="standard">Standard (1-2 semaines)</label>
+                            <input type="radio" id="info" name="urgence" value="Informatif">
+                            <label for="info">Informatif</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Décrivez brièvement votre situation</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Envoyer la demande</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Joseph Lauzon Potts, Avocat. Tous droits réservés.</p>
+            </div>
+    </footer>
+
+</body>
+</html>
