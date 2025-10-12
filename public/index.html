@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Services juridiques – Joseph Lauzon Potts" />
   <meta name="twitter:description" content="Conseil juridique stratégique pour entreprises québécoises." />
   <meta name="theme-color" content="#123a63" />
-  <link rel="icon" type="image/png" href="img/JLP%20black%20logo.png" />
+  <link rel="icon" type="image/png" href="img/Logo_Officiel.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile-overrides.css" />
   <link rel="preload" href="img/JLP%20black%20logo.png" as="image" />
@@ -71,8 +71,8 @@
               <div class="diag-content">
                 <span class="step-meta" data-i18n="diag.step1.meta">Structure initiale</span>
                 <h4 id="diag-step1-title" class="diag-step-title" data-i18n="diag.step1.title">Mise en place & Structure</h4>
-                <p class="diag-step-text" data-i18n="diag.step1.body">Vous démarrez ou vous réorganisez ? La bonne architecture juridique conditionne votre capacité à croître et à intégrer des partenaires sans friction. On clarifie, on formalise, on sécurise – dès le départ.</p>
-                <p class="diag-step-text" data-i18n="diag.step1.body2">Objectif : une base robuste, conforme et modulable qui ne freine jamais vos décisions stratégiques.</p>
+                <p class="diag-step-text" data-i18n="diag.step1.body">Vous démarrez ou vous réorganisez? La bonne architecture juridique conditionne votre capacité à croître et à intégrer des partenaires sans friction. On clarifie, on formalise, on sécurise – dès le départ.</p>
+                <p class="diag-step-text" data-i18n="diag.step1.body2">Objectif: une base robuste, conforme et modulable qui ne freine jamais vos décisions stratégiques.</p>
                 <ul class="diag-points">
                   <li data-i18n="diag.step1.p1">Choix de la forme juridique (inc., s.e.c., s.e.n.c.)</li>
                   <li data-i18n="diag.step1.p2">Organisation juridique initiale et tenue des registres</li>
@@ -119,7 +119,7 @@
                 <span class="step-meta" data-i18n="diag.step3.meta">Relations commerciales</span>
                 <h4 id="diag-step3-title" class="diag-step-title" data-i18n="diag.step3.title">Contrats & Négociation</h4>
                 <p class="diag-step-text" data-i18n="diag.step3.body">Chaque entente mal cadrée coûte du temps ou du capital futur. Nous rédigeons et négocions des contrats lisibles, équilibrés et défendables qui protègent la valeur que vous créez.</p>
-                <p class="diag-step-text" data-i18n="diag.step3.body2">Philosophie : clarté, levier stratégique et limitation des zones grises.</p>
+                <p class="diag-step-text" data-i18n="diag.step3.body2">Philosophie: clarté, levier stratégique et limitation des zones grises.</p>
                 <ul class="diag-points">
                   <li data-i18n="diag.step3.p1">Contrats de services / fournisseurs</li>
                   <li data-i18n="diag.step3.p2">Ententes de confidentialité (NDA)</li>
@@ -139,7 +139,7 @@
                 <span class="step-meta" data-i18n="diag.step4.meta">Anticiper & protéger</span>
                 <h4 id="diag-step4-title" class="diag-step-title" data-i18n="diag.step4.title">Prévention & Résolution de différends</h4>
                 <p class="diag-step-text" data-i18n="diag.step4.body">Le meilleur litige est celui qui ne naît pas. Nous identifions les points de friction tôt, calibrons les mises en demeure et privilégions des issues rapides et proportionnées.</p>
-                <p class="diag-step-text" data-i18n="diag.step4.body2">Si l'escalade est inévitable : stratégie structurée, contrôle des coûts et protection réputationnelle.</p>
+                <p class="diag-step-text" data-i18n="diag.step4.body2">Si l'escalade est inévitable: stratégie structurée, contrôle des coûts et protection réputationnelle.</p>
                 <ul class="diag-points">
                   <li data-i18n="diag.step4.p1">Mises en demeure et négociations stratégiques</li>
                   <li data-i18n="diag.step4.p2">Préparation et support aux petites créances</li>
@@ -173,8 +173,15 @@
     </section>
     <!-- Sections ressources & cabinet retirées conformément à la demande -->
     <section id="contact" class="panel cta-panel" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title" data-i18n="contact.heading">Contact</h2>
-      <form id="contact-form" style="max-width:560px; display:grid; gap:18px; margin:0 auto;" autocomplete="on" aria-describedby="contact-title">
+  <h2 id="contact-title" class="section-title" data-i18n="contact.heading">Contact</h2>
+  <form id="contact-form" action="https://formspree.io/f/xwprrjwg" method="POST" style="max-width:560px; display:grid; gap:18px; margin:0 auto;" autocomplete="on" aria-describedby="contact-title">
+        <!-- Formspree hidden helpers -->
+        <input type="hidden" name="_subject" value="Nouveau message – Site Web JLP" />
+        <input type="hidden" name="_language" value="fr" />
+        <!-- Honeypot field -->
+        <div style="display:none;">
+          <label>Ne pas remplir (anti-spam)<input type="text" name="_honeypot" tabindex="-1" autocomplete="off" /></label>
+        </div>
         <div>
           <label for="name" data-i18n="contact.label.name">Nom</label><br />
           <input id="name" name="name" type="text" required autocomplete="name" style="width:100%; padding:10px 12px; border:1px solid #c8d2dd; border-radius:8px; font-size:1rem;" />
@@ -242,10 +249,10 @@
           <label for="message" data-i18n="contact.label.message">Message</label><br />
           <textarea id="message" name="message" rows="5" required aria-describedby="contact-title" style="width:100%; padding:10px 12px; border:1px solid #c8d2dd; border-radius:8px; font-size:1rem; resize:vertical;"></textarea>
         </div>
-        <button type="submit" class="btn" data-i18n="contact.submit" style="--btn-bg:var(--accent); border-radius:12px;">Envoyer</button>
+  <button type="submit" class="btn" data-i18n="contact.submit" style="--btn-bg:var(--accent); border-radius:12px;">Envoyer</button>
         <p id="form-status" role="status" aria-live="polite" style="margin:0; font-size:.9rem; color:#fff;"></p>
       </form>
-      <p style="margin-top:36px; font-size:.75rem; opacity:.8;" data-i18n="contact.disclaimer">Cette interface ne constitue pas un avis juridique. Ne transmettez aucune information confidentielle avant établissement d'un mandat.</p>
+  <p style="margin-top:36px; font-size:.75rem; opacity:.8;" data-i18n="contact.disclaimer">Cette interface ne constitue pas un avis juridique. Ne transmettez aucune information confidentielle avant établissement d'un mandat.</p>
     </section>
   </main>
   <footer>
@@ -266,12 +273,50 @@
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('contact-form').addEventListener('submit', function(e){
-      e.preventDefault();
+    // Formspree integration with progressive enhancement (AJAX) & i18n messages
+    (function(){
+      const form = document.getElementById('contact-form'); if(!form) return;
       const status = document.getElementById('form-status');
-      status.textContent = 'Envoi en cours…';
-      setTimeout(()=>{ status.textContent = 'Message simulé – implémentez un service d\'envoi email.'; this.reset(); }, 900);
-    });
+      const MESSAGES = {
+        fr: {
+          sending: 'Envoi en cours…',
+          success: 'Message envoyé. Merci, je vous répondrai rapidement.',
+          error: 'Une erreur est survenue. Réessayez plus tard ou écrivez directement.',
+          spam: 'Détection anti-spam – envoi annulé.'
+        },
+        en: {
+          sending: 'Sending…',
+          success: 'Message sent. Thank you, I will reply shortly.',
+          error: 'An error occurred. Please retry later or email directly.',
+          spam: 'Spam detection – submission cancelled.'
+        }
+      };
+      function currentLang(){ return (document.documentElement.lang || 'fr').startsWith('en') ? 'en' : 'fr'; }
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const honey = form.querySelector('input[name="_honeypot"]');
+        const lang = currentLang();
+        if(honey && honey.value){ status.textContent = MESSAGES[lang].spam; return; }
+        status.textContent = MESSAGES[lang].sending;
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: form.method || 'POST',
+          body: formData,
+          headers: { 'Accept':'application/json' }
+        }).then(async resp => {
+          if(resp.ok){
+            status.textContent = MESSAGES[lang].success;
+            form.reset();
+          } else {
+            // Try to parse error for debugging (not shown to user)
+            try { await resp.json(); } catch(_){ }
+            status.textContent = MESSAGES[lang].error;
+          }
+        }).catch(()=>{
+          status.textContent = MESSAGES[lang].error;
+        });
+      });
+    })();
   const langButtons = document.querySelectorAll('.lang-toggle button'); // legacy (will be empty now)
   const singleLangSwitch = document.getElementById('langSwitcher');
   // Unified mobile query for large phones & phablets (covers iPhone XR, 14 Pro Max landscape widths etc.)
