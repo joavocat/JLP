@@ -115,7 +115,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(enc)
 
 def run():
-    port = int(os.getenv('PORT','8000'))
+    port = int(os.getenv('PORT','8001'))
     # CLI override: python3 serve.py 8070
     if len(sys.argv) > 1:
         try:
@@ -123,6 +123,7 @@ def run():
         except ValueError:
             pass
     server = ThreadingHTTPServer(('0.0.0.0', port), Handler)
+    server.allow_reuse_address = True
     print(f"Serving site on http://localhost:{port}  (CTRL+C to quit)")
     print("Ouvrez cette URL exacte dans le navigateur pour que fetch('/contact') fonctionne.")
     try:

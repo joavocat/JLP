@@ -17,6 +17,8 @@
     * { box-sizing:border-box; }
     html { font:400 16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; -webkit-text-size-adjust:100%; }
     body { margin:0; background:var(--brand-050); color:var(--ink-700); -webkit-font-smoothing:antialiased; }
+    /* Inputs et textarea: s'assurer d'une police unifiée (certains UA mobiles appliquent une monospace par défaut au textarea) */
+    input, textarea { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
     img { max-width:100%; height:auto; display:block; }
     a { color:var(--brand-600); text-decoration:none; }
     a:hover, a:focus-visible { text-decoration:underline; }
@@ -80,6 +82,18 @@
 
     /* About section paragraph justification */
     #a-propos .about-text p { text-align:justify; }
+
+    /* Fix portrait display issue */
+    .about-portrait {
+      flex: 0 0 auto !important;
+      width: 380px !important;
+      max-width: 100% !important;
+    }
+    .about-portrait img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
 
   footer { text-align:center; padding:60px 16px 90px; font-size:.78rem; background:linear-gradient(180deg,#0b1e2c,#0e3046 58%,#103a55); color:#9fb4c2; position:relative; overflow:hidden; }
   footer:before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 68% 22%,rgba(70,140,190,.18),transparent 60%); pointer-events:none; opacity:.7; }
